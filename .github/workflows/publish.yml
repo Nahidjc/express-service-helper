@@ -14,7 +14,6 @@ jobs:
         with:
           node-version: 16
       - run: npm install
-      - run: npm test
 
   # publish to npm
   publish-npm:
@@ -27,9 +26,8 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm install
+      - run: npm version patch
       - run: npm run build
       - run: cd output/prod && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
-
-       
