@@ -38,30 +38,35 @@ app.listen(3000, () => {
 
 Include the response handler middleware in your Express application to standardize response formats:
 
-````javascript
-const { responseHandler } = require('innovatica-express-helper');
+```javascript
+const { responseHandler } = require("innovatica-express-helper");
 
 app.use(responseHandler());
+```
 
 ### Error Response Handler
 
 Handle errors uniformly across your application:
 
 ```javascript
-const { errorResponseHandler } = require('innovatica-express-helper');
+const { errorResponseHandler } = require("innovatica-express-helper");
 
 app.use(errorResponseHandler);
-
+```
 
 ### DateTime Helpers
 
 Use the DateTime helpers to format dates and get the current date in UTC+6:
 
 ```javascript
-const { formatDateTime, getCurrentDateTimeUTCPlus6 } = require('innovatica-express-helper');
+const {
+  formatDateTime,
+  getCurrentDateTimeUTCPlus6,
+} = require("innovatica-express-helper");
 
-const formattedDate = formatDateTime('YYYY-MM-DD');
+const formattedDate = formatDateTime("YYYY-MM-DD");
 const currentDate = getCurrentDateTimeUTCPlus6();
+```
 
 ## API Reference
 
@@ -74,9 +79,9 @@ Middleware for tracing incoming requests.
 Usage:
 
 ```javascript
-const { tracingMiddleware } = require('innovatica-express-helper');
+const { tracingMiddleware } = require("innovatica-express-helper");
 app.use(tracingMiddleware);
-
+```
 
 ### Response Handler API
 
@@ -87,8 +92,9 @@ Middleware for handling responses in a consistent format.
 Usage:
 
 ```javascript
-const { responseHandler } = require('innovatica-express-helper');
+const { responseHandler } = require("innovatica-express-helper");
 app.use(responseHandler());
+```
 
 ### Error Response Handler API
 
@@ -99,9 +105,9 @@ Middleware for handling errors uniformly.
 Usage:
 
 ```javascript
-const { errorResponseHandler } = require('innovatica-express-helper');
+const { errorResponseHandler } = require("innovatica-express-helper");
 app.use(errorResponseHandler);
-
+```
 
 ### DateTime Helpers API
 
@@ -110,17 +116,20 @@ app.use(errorResponseHandler);
 Formats the given date according to the specified format.
 
 - **Parameters:**
+
   - `format` (string): The format in which to return the date.
   - `date` (Date, optional): The date to format. Defaults to the current date if not provided.
 
 - **Returns:**
+
   - (string): The formatted date.
 
 - **Usage:**
 
 ```javascript
-const { formatDateTime } = require('innovatica-express-helper');
-const formattedDate = formatDateTime('YYYY-MM-DD');
+const { formatDateTime } = require("innovatica-express-helper");
+const formattedDate = formatDateTime("YYYY-MM-DD");
+```
 
 ### DateTime Helpers API
 
@@ -129,13 +138,15 @@ const formattedDate = formatDateTime('YYYY-MM-DD');
 Gets the current date and time in UTC+6.
 
 - **Returns:**
+
   - (Date): The current date and time in UTC+6.
 
 - **Usage:**
 
 ```javascript
-const { getCurrentDateTimeUTCPlus6 } = require('innovatica-express-helper');
+const { getCurrentDateTimeUTCPlus6 } = require("innovatica-express-helper");
 const currentDate = getCurrentDateTimeUTCPlus6();
+```
 
 ## Contributing
 
@@ -149,4 +160,3 @@ We welcome contributions to improve this package. To contribute:
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-````
