@@ -17,6 +17,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "14"
+      - name: Configure Git
+        run: |
+          git config --global user.email "nahidjc80@gmail.com"
 
       - name: Install dependencies
         run: npm install
