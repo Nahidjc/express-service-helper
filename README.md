@@ -19,9 +19,9 @@ npm install innovatica-service-helper
 
 To use the tracing middleware, include it in your Express application as shown below:
 
-````javascript
-const express = require('express');
-const { tracingMiddleware } = require('innovatica-express-helper');
+```javascript
+const express = require("express");
+const { tracingMiddleware } = require("innovatica-express-helper");
 
 const app = express();
 
@@ -30,14 +30,15 @@ app.use(tracingMiddleware);
 // Define your routes here
 
 app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+  console.log("Server is running on port 3000");
 });
+```
 
 ### Response Handler
 
 Include the response handler middleware in your Express application to standardize response formats:
 
-```javascript
+````javascript
 const { responseHandler } = require('innovatica-express-helper');
 
 app.use(responseHandler());
