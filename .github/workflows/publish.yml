@@ -1,4 +1,4 @@
-name: Publish Package
+name: Publish to npm
 
 on:
   push:
@@ -6,25 +6,27 @@ on:
       - master
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "20"
+          node-version: "14"
 
       - name: Install dependencies
         run: npm install
 
-      - name: Update version and publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # Replace with your npm token secret
+      - name: Update version and push tag
         run: |
-          npm version patch  # Or use `npm version` with appropriate argument
-          npm publish
-          git push --follow-tags
+          npm version patch
+          git push origin master --follow-tags
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: npm publish
