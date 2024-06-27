@@ -1,7 +1,6 @@
 # Innovatica Express Helper
 
-[![npm version](https://badge.fury.io/js/innovatica-service-helper.svg)](https://badge.fury.io/js/innovatica-service-helper)
-[![Build Status](https://github.com/Nahidjc/express-service-helper/actions/workflows/publish.yml/badge.svg)](https://github.com/Nahidjc/express-service-helper/actions)
+[![npm version](https://img.shields.io/npm/v/innovatica-service-helper)](https://badge.fury.io/js/innovatica-service-helper)
 
 A utility package for Express.js providing tracing middleware, response handlers, and various helper methods.
 
@@ -21,7 +20,7 @@ To use the tracing middleware, include it in your Express application as shown b
 
 ```javascript
 const express = require("express");
-const { tracingMiddleware } = require("innovatica-express-helper");
+const { tracingMiddleware } = require("innovatica-service-helper");
 
 const app = express();
 
@@ -39,7 +38,7 @@ app.listen(3000, () => {
 Include the response handler middleware in your Express application to standardize response formats:
 
 ```javascript
-const { responseHandler } = require("innovatica-express-helper");
+const { responseHandler } = require("innovatica-service-helper");
 
 app.use(responseHandler());
 ```
@@ -49,7 +48,7 @@ app.use(responseHandler());
 Handle errors uniformly across your application:
 
 ```javascript
-const { errorResponseHandler } = require("innovatica-express-helper");
+const { errorResponseHandler } = require("innovatica-service-helper");
 
 app.use(errorResponseHandler);
 ```
@@ -62,7 +61,7 @@ Use the DateTime helpers to format dates and get the current date in UTC+6:
 const {
   formatDateTime,
   getCurrentDateTimeUTCPlus6,
-} = require("innovatica-express-helper");
+} = require("innovatica-service-helper");
 
 const formattedDate = formatDateTime("YYYY-MM-DD");
 const currentDate = getCurrentDateTimeUTCPlus6();
@@ -79,7 +78,7 @@ Middleware for tracing incoming requests.
 Usage:
 
 ```javascript
-const { tracingMiddleware } = require("innovatica-express-helper");
+const { tracingMiddleware } = require("innovatica-service-helper");
 app.use(tracingMiddleware);
 ```
 
@@ -92,7 +91,7 @@ Middleware for handling responses in a consistent format.
 Usage:
 
 ```javascript
-const { responseHandler } = require("innovatica-express-helper");
+const { responseHandler } = require("innovatica-service-helper");
 app.use(responseHandler());
 ```
 
@@ -105,7 +104,7 @@ Middleware for handling errors uniformly.
 Usage:
 
 ```javascript
-const { errorResponseHandler } = require("innovatica-express-helper");
+const { errorResponseHandler } = require("innovatica-service-helper");
 app.use(errorResponseHandler);
 ```
 
@@ -127,7 +126,7 @@ Formats the given date according to the specified format.
 - **Usage:**
 
 ```javascript
-const { formatDateTime } = require("innovatica-express-helper");
+const { formatDateTime } = require("innovatica-service-helper");
 const formattedDate = formatDateTime("YYYY-MM-DD");
 ```
 
@@ -144,7 +143,7 @@ Gets the current date and time in UTC+6.
 - **Usage:**
 
 ```javascript
-const { getCurrentDateTimeUTCPlus6 } = require("innovatica-express-helper");
+const { getCurrentDateTimeUTCPlus6 } = require("innovatica-service-helper");
 const currentDate = getCurrentDateTimeUTCPlus6();
 ```
 
