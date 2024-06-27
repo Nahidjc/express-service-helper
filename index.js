@@ -5,6 +5,7 @@ const { errorCodes } = require("./lib/errorCodes");
 const initJaegerTracer = require("./lib/tracer");
 const tracingMiddleware = require("./lib/tracingMiddleware");
 const dateTimeHelpers = require("./lib/dateTimeHelpers");
+const requestId = require("./lib/requestId");
 
 module.exports = {
   responseHandler,
@@ -14,4 +15,5 @@ module.exports = {
   initJaegerTracer,
   tracingMiddleware,
   dateTimeHelpers,
+  requestId,
 };

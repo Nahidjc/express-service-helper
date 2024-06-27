@@ -1,6 +1,6 @@
 {
   "name": "innovatica-service-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A helper package for Express.js including response handling and tracing middleware",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "jaeger-client": "^3.18.0",
-    "opentracing": "^0.14.4"
+    "opentracing": "^0.14.4",
+    "uuidv4": "^6.2.13"
   }
 }
